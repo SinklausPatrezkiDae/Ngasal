@@ -5,28 +5,30 @@ Kelas : 2A
 Prodi S1 Sistem Informasi 
 Fakultas Teknologi Informasi
 """
-#FUNGSI MENU
 from os import system
 import datetime
 
 tanggal = datetime.datetime.now()
 
-
+#fungsi clear screen
 def cls():
 	return system('cls')
 
+#fungsi menampilkan menu
 def menu():
 	print(45*"=")
 	print("PERHITUNGAN GAJI POKOK KARYAWAN CV LOGOS")
 	print(45*"=")
-
+	
+#fungsi menampilkan pilihan
 def pilihan():
 	print(45*"=")
 	print(f'Kode \t Golongan \t Gaji')
 	for i in range(len(listKode)): #untuk i di dalam banyaknya data dalam listKode (for loop otomatis menambahkan increment)
 		print(f'{listKode[i]} \t {listGol[i]} \t Rp.{listGaji[i]:,}') #tampilkan list kode, listgol, listgaji
 	print(45*"=") 
-
+	
+#fungsi validasi inputan golongan hanya menerima angka
 def iptgol():
 	while True: #infinite loop (akan mengulang secara terus menerus sampai inputan yang dimasukkan benar)
 		try: #menangkap error pada inputan user
@@ -38,7 +40,8 @@ def iptgol():
 			print(f'\nInputan Hanya Menerima Angka')
 		else:
 			return ipt  
-
+		
+#fungsi validasi inputan anak hanya menerima sudah atau belum saja
 def iptanak():
 	ipt = input("Punya Anak? : ").upper()
 	while ipt != "SUDAH" and ipt != "BELUM":
@@ -50,7 +53,7 @@ def iptanak():
 	return ipt
 
 
-
+#fungsi validasi inputan jenis kelamin hanya menerima laki-laki atau perempuan saja
 def iptjk():
 	ipt = input("Jenis Kelamin : ").upper()
 	while ipt != "LAKI-LAKI" and ipt != "PEREMPUAN":
@@ -61,6 +64,7 @@ def iptjk():
 		ipt = input("Jenis Kelamin : ").upper()
 	return ipt
 
+#fungsi validasi ipt kawin hanya menerima kawin atau belum saja
 def iptkawin():
 	ipt = input("Status Kawin : ").upper()
 	while ipt != "KAWIN" and ipt != "BELUM":
@@ -71,6 +75,7 @@ def iptkawin():
 		ipt = input("Status Kawin : ").upper()
 	return ipt
 
+#fugnsi menampilkan output pertama
 def output():
 	cls()
 	#tampilkan gaji pokok
@@ -105,7 +110,8 @@ def output():
 	print(45*"=")
 	print(f'Gaji Netto    : Rp.{gajiNetto:,}')
 	print(45*"=")
-
+	
+#fungsi validasi ipt tambah hanya menerima y/t saja
 def ipttambah():
 	print()
 	ipt = input("Tambah Karyawan? [y/t]: ").lower()
@@ -117,6 +123,7 @@ def ipttambah():
 		ipt = input("Tambah Karyawan? [y/t]: ").lower()
 	return ipt
 
+#fungsi menampilkan output kedua
 def output2():
 	cls()
 	print(45*"=")
